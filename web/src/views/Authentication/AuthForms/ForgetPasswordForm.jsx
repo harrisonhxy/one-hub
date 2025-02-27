@@ -84,7 +84,7 @@ const ForgetPasswordForm = ({ ...others }) => {
   return (
     <>
       {sendEmail ? (
-        <Typography variant="h3" padding={'20px'}>
+        <Typography variant="h3" padding={'20px'} sx={{ textAlign: 'center' }}>
           {t('registerForm.restSendEmail')}
         </Typography>
       ) : (

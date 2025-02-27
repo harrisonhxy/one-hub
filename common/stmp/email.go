@@ -40,7 +40,7 @@ func NewStmp(host string, port int, username string, password string, from strin
 
 func (s *StmpConfig) Send(to, subject, body string) error {
 	message := mail.NewMsg()
-	message.From(s.From)
+	message.From(fmt.Sprintf("Harrizone API <%s>", s.From))
 	message.To(to)
 	message.Subject(subject)
 	message.SetGenHeader("References", s.getReferences())
@@ -102,7 +102,7 @@ func SendPasswordResetEmail(userName, email, link string) error {
 
 	contentTemp := `<p style="font-size: 30px">Hi <strong>%s,</strong></p>
 	<p>
-		您正在进行密码重置。点击下方按钮以重置密码。
+		您正在进行密码重置，点击下方按钮以重置密码。
 	</p>
 	
 	<p style="text-align: center; font-size: 13px;">
