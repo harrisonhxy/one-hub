@@ -89,7 +89,7 @@ func getDefaultTemplate(content string) string {
 	  </head>
 	  <body>
 		<center class="wrapper">
-		  ` + getLogo() + `
+		  <!-- 移除 getLogo() 部分 -->
 		  <table class="main" width="100%">
 			<tr>
 			  <td>
@@ -100,7 +100,7 @@ func getDefaultTemplate(content string) string {
 		  <table class="footer" width="100%">
 			<tr>
 			  <td width="100%">
-				<p>© ` + getSystemName() + `</p>
+				<p>© ` + getSystemName() + `. All rights reserved.</p>
 			  </td>
 			</tr>
 		  </table>
