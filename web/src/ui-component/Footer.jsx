@@ -42,9 +42,9 @@ const Footer = () => {
       ) : (
         <StyledFooter>
           <p>
-            ©
+            © {' '}
             <MuiLink href="https://harrizone.com" target="_blank">Harrizone.com</MuiLink>
-            <span className="powered">Powered by</span>
+            <span className="powered">Powered by</span>{' '}
             <MuiLink href="https://github.com/MartialBE/one-hub" target="_blank">One Hub</MuiLink>
           </p>
         </StyledFooter>
