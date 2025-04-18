@@ -188,9 +188,11 @@ const Dashboard = () => {
                 </Box>
               </Box>
             </UserCard>
+            {/* 注释掉'快速开始'的聊天链接卡片
             <Box mt={2}>
               <QuickStartCard />
             </Box>
+            */}
             {/* 邀请 */}
             <Box mt={2}>
               <InviteCard />
