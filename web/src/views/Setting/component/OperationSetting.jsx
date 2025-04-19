@@ -19,7 +19,7 @@ import { API } from 'utils/api';
 import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
 import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
 import { DateTimePicker } from '@mui/x-date-pickers/DateTimePicker';
-import ChatLinksDataGrid from './ChatLinksDataGrid';
+// import ChatLinksDataGrid from './ChatLinksDataGrid';
 import dayjs from 'dayjs';
 import { LoadStatusContext } from 'contexts/StatusContext';
 import { useTranslation } from 'react-i18next';
@@ -790,7 +790,7 @@ const OperationSetting = () => {
             <div dangerouslySetInnerHTML={{ __html: t('setting_index.operationSettings.chatLinkSettings.info') }} />
           </Alert>
           <Stack justifyContent="flex-start" alignItems="flex-start" spacing={2}>
-            <ChatLinksDataGrid links={inputs.ChatLinks || '[]'} onChange={handleInputChange} />
+            {/* <ChatLinksDataGrid links={inputs.ChatLinks || '[]'} onChange={handleInputChange} /> */}
 
             <Button
               variant="contained"

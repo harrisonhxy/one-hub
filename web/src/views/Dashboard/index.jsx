@@ -13,7 +13,7 @@ import { UserContext } from 'contexts/UserContext';
 import Label from 'ui-component/Label';
 import InviteCard from './component/InviteCard';
 import QuotaLogWeek from './component/QuotaLogWeek';
-import QuickStartCard from './component/QuickStartCard';
+// import QuickStartCard from './component/QuickStartCard';
 import RPM from './component/RPM';
 
 const Dashboard = () => {
