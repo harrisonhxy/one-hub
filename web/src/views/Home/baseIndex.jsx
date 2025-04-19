@@ -1,7 +1,9 @@
 import { Box, Typography, Button, Container, Stack } from '@mui/material';
 import Grid from '@mui/material/Unstable_Grid2';
-import { GitHub } from '@mui/icons-material';
+// import { GitHub } from '@mui/icons-material';
 import { useTranslation } from 'react-i18next';
+import { IconArrowUpRight } from '@tabler/icons-react';
+
 
 const BaseIndex = () => {
   const { t } = useTranslation();
@@ -26,8 +28,8 @@ const BaseIndex = () => {
               </Typography>
               <Button
                 variant="contained"
-                startIcon={<GitHub />}
-                href=""
+                startIcon={<IconArrowUpRight />}
+                href="" // 替换为使用文档的URL
                 target="_blank"
                 sx={{ backgroundColor: '#24292e', color: '#fff', width: 'fit-content', boxShadow: '0 3px 5px 2px rgba(255, 105, 135, .3)' }}
               >

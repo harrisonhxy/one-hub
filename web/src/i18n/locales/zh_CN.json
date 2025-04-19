@@ -785,7 +785,6 @@
         "usernameClaimsPlaceholder": "请输入用户名声明(例如username)",
         "saveButton": "保存OIDC设置"
       },
-
       "configureTurnstile": {
         "title": "配置 Turnstile",
         "subTitle": "用以支持用户校验，",
@@ -865,11 +864,9 @@
     "githubError": "操作失败，重定向至登录界面中...",
     "githubCountError": "出现错误，第 {{count}} 次重试中...",
     "githubLogin": "GitHub 登录",
-
     "oidcError": "操作失败，重定向至登录界面中...",
     "oidcCountError": "出现错误，第 {{count}} 次重试中...",
     "oidcLogin": "OIDC 登录",
-
     "larkLogin": "飞书 登录",
     "passwordRest": "密码重置确认",
     "useGithubLogin": "使用 Github 登录",
@@ -877,7 +874,7 @@
     "useOIDCLogin": "使用 OIDC 登录",
     "useLarkLogin": "使用飞书登录"
   },
-  "description": "All in one 的 OpenAI 接口\n整合各种 API 访问方式\n一键部署，开箱即用",
+  "description": "All in one 的 OpenAI 接口，整合各种 API 访问方式",
   "about": {
     "loadingError": "加载关于内容失败...",
     "aboutTitle": "关于",
