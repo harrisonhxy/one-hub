@@ -784,13 +784,14 @@ const OperationSetting = () => {
         </Stack>
       </SubCard>
 
+      {/*
       <SubCard title={t('setting_index.operationSettings.chatLinkSettings.title')}>
         <Stack spacing={2}>
           <Alert severity="info">
             <div dangerouslySetInnerHTML={{ __html: t('setting_index.operationSettings.chatLinkSettings.info') }} />
           </Alert>
           <Stack justifyContent="flex-start" alignItems="flex-start" spacing={2}>
-            {/* <ChatLinksDataGrid links={inputs.ChatLinks || '[]'} onChange={handleInputChange} /> */}
+            <ChatLinksDataGrid links={inputs.ChatLinks || '[]'} onChange={handleInputChange} />
 
             <Button
               variant="contained"
@@ -803,6 +804,7 @@ const OperationSetting = () => {
           </Stack>
         </Stack>
       </SubCard>
+      */}
 
       <SubCard title={t('setting_index.operationSettings.audioTokenSettings.title')}>
         <Stack spacing={2}>
