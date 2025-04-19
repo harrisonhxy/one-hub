@@ -22,7 +22,7 @@ import { useSelector } from 'react-redux';
 import ThemeButton from 'ui-component/ThemeButton';
 import { NoticeButton } from 'ui-component/notice';
 import I18nButton from 'ui-component/i18nButton';
-import { IconMenu2 } from '@tabler/icons-react';
+import { IconMenu2, IconArrowUpRight } from '@tabler/icons-react';
 import Transitions from 'ui-component/extended/Transitions';
 import MainCard from 'ui-component/cards/MainCard';
 import { useMediaQuery } from '@mui/material';
@@ -117,6 +117,25 @@ const Header = () => {
               </Button>
             )}
             */}
+            <Button
+              component="a"
+              variant="text"
+              href="" // 替换为文档的URL
+              target="_blank"
+              rel="noopener noreferrer"
+              color="inherit"
+              sx={{
+                fontSize: '0.875rem',
+                fontWeight: 500,
+                textTransform: 'none',
+                display: 'flex',
+                alignItems: 'center',
+                gap: '4px'
+              }}
+            >
+              {t('使用文档') || '使用文档'}
+              <IconArrowUpRight size={18} stroke={1.5} />
+            </Button>
             <Button
               component={Link}
               variant="text"
@@ -272,6 +291,29 @@ const Header = () => {
                       </ListItemButton>
                     )}
                     */}
+
+                    <ListItemButton
+                      component="a"
+                      href="" // 替换为文档的URL
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <ListItemText
+                        primary={
+                          <Typography
+                            variant="body1"
+                            sx={{
+                              display: 'flex',
+                              alignItems: 'center',
+                              gap: '8px'
+                            }}
+                          >
+                            {t('使用文档') || '使用文档'}
+                            <IconArrowUpRight size={16} stroke={1.5} />
+                          </Typography>
+                        }
+                      />
+                    </ListItemButton>
 
                     <ListItemButton component={Link} to="/price" selected={pathname === '/price'}>
                       <ListItemText
