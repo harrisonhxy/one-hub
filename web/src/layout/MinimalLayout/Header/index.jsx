@@ -22,11 +22,11 @@ import { useSelector } from 'react-redux';
 import ThemeButton from 'ui-component/ThemeButton';
 import { NoticeButton } from 'ui-component/notice';
 import I18nButton from 'ui-component/i18nButton';
-import { IconMenu2 } from '@tabler/icons-react';
 import Transitions from 'ui-component/extended/Transitions';
 import MainCard from 'ui-component/cards/MainCard';
 import { useMediaQuery } from '@mui/material';
 import { useTranslation } from 'react-i18next';
+import { IconMenu2, IconArrowUpRight } from '@tabler/icons-react';
 
 // ==============================|| MINIMAL NAVBAR / HEADER ||============================== //
 
@@ -99,6 +99,25 @@ const Header = () => {
               }}
             >
               {t('menu.home')}
+            </Button>
+            <Button
+              component="a"
+              variant="text"
+              href="" // 使用文档链接
+              target="_blank"
+              rel="noopener noreferrer"
+              color="inherit"
+              sx={{
+                fontSize: '0.875rem',
+                fontWeight: 500,
+                textTransform: 'none',
+                display: 'flex',
+                alignItems: 'center',
+                gap: '4px'
+              }}
+            >
+              {t('menu.documentation')}
+              <IconArrowUpRight size={18} stroke={1.5} />
             </Button>
             {/*{account.user && (*/}
             {/*  <Button*/}
@@ -246,6 +265,29 @@ const Header = () => {
                             }}
                           >
                             {t('menu.home')}
+                          </Typography>
+                        }
+                      />
+                    </ListItemButton>
+
+                    <ListItemButton
+                      component="a"
+                      href="" // 使用文档链接
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <ListItemText
+                        primary={
+                          <Typography
+                            variant="body1"
+                            sx={{
+                              display: 'flex',
+                              alignItems: 'center',
+                              gap: '8px'
+                            }}
+                          >
+                            {t('menu.documentation')}
+                            <IconArrowUpRight size={16} stroke={1.5} />
                           </Typography>
                         }
                       />

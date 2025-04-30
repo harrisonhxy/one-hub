@@ -446,7 +446,8 @@
     "signout": "登出",
     "signup": "註冊",
     "unknownVersion": "未知版本",
-    "welcomeBack": "歡迎回來"
+    "welcomeBack": "歡迎回來",
+    "documentation": "文檔"
   },
   "midjourneyPage": {
     "channel": "渠道",

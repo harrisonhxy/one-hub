@@ -445,7 +445,8 @@
     "signout": "Signout",
     "signup": "Signup",
     "unknownVersion": "Unknown Version",
-    "welcomeBack": "Welcome Back"
+    "welcomeBack": "Welcome Back",
+    "documentation": "Document"
   },
   "midjourneyPage": {
     "channel": "Channel",
