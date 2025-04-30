@@ -100,21 +100,21 @@ const Header = () => {
             >
               {t('menu.home')}
             </Button>
-            {account.user && (
-              <Button
-                component={Link}
-                variant="text"
-                to="/playground"
-                color={pathname === '/playground' ? 'primary' : 'inherit'}
-                sx={{
-                  fontSize: '0.875rem',
-                  fontWeight: 500,
-                  textTransform: 'none'
-                }}
-              >
-                {t('playground')}
-              </Button>
-            )}
+            {/*{account.user && (*/}
+            {/*  <Button*/}
+            {/*    component={Link}*/}
+            {/*    variant="text"*/}
+            {/*    to="/playground"*/}
+            {/*    color={pathname === '/playground' ? 'primary' : 'inherit'}*/}
+            {/*    sx={{*/}
+            {/*      fontSize: '0.875rem',*/}
+            {/*      fontWeight: 500,*/}
+            {/*      textTransform: 'none'*/}
+            {/*    }}*/}
+            {/*  >*/}
+            {/*    {t('playground')}*/}
+            {/*  </Button>*/}
+            {/*)}*/}
             <Button
               component={Link}
               variant="text"
@@ -251,23 +251,23 @@ const Header = () => {
                       />
                     </ListItemButton>
 
-                    {account.user && (
-                      <ListItemButton component={Link} to="/playground" selected={pathname === '/playground'}>
-                        <ListItemText
-                          primary={
-                            <Typography
-                              variant="body1"
-                              sx={{
-                                fontWeight: pathname === '/playground' ? 500 : 400,
-                                color: pathname === '/playground' ? theme.palette.primary.main : theme.palette.text.primary
-                              }}
-                            >
-                              {t('playground')}
-                            </Typography>
-                          }
-                        />
-                      </ListItemButton>
-                    )}
+                    {/*{account.user && (*/}
+                    {/*  <ListItemButton component={Link} to="/playground" selected={pathname === '/playground'}>*/}
+                    {/*    <ListItemText*/}
+                    {/*      primary={*/}
+                    {/*        <Typography*/}
+                    {/*          variant="body1"*/}
+                    {/*          sx={{*/}
+                    {/*            fontWeight: pathname === '/playground' ? 500 : 400,*/}
+                    {/*            color: pathname === '/playground' ? theme.palette.primary.main : theme.palette.text.primary*/}
+                    {/*          }}*/}
+                    {/*        >*/}
+                    {/*          {t('playground')}*/}
+                    {/*        </Typography>*/}
+                    {/*      }*/}
+                    {/*    />*/}
+                    {/*  </ListItemButton>*/}
+                    {/*)}*/}
 
                     <ListItemButton component={Link} to="/price" selected={pathname === '/price'}>
                       <ListItemText

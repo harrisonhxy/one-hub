@@ -3,7 +3,7 @@ import { Icon } from '@iconify/react';
 const icons = {
   IconDashboard: () => <Icon width={20} icon="solar:widget-2-bold-duotone" />,
   IconChartHistogram: () => <Icon width={20} icon="solar:chart-2-bold-duotone" />,
-  IconBallFootball: () => <Icon width={20} icon="solar:chat-round-line-bold-duotone" />
+  // IconBallFootball: () => <Icon width={20} icon="solar:chat-round-line-bold-duotone" />
 };
 
 const dashboard = {
@@ -29,14 +29,14 @@ const dashboard = {
       breadcrumbs: false,
       isAdmin: true
     },
-    {
-      id: 'playground',
-      title: 'Playground',
-      type: 'item',
-      url: '/panel/playground',
-      icon: icons.IconBallFootball,
-      breadcrumbs: false
-    }
+    // {
+    //   id: 'playground',
+    //   title: 'Playground',
+    //   type: 'item',
+    //   url: '/panel/playground',
+    //   icon: icons.IconBallFootball,
+    //   breadcrumbs: false
+    // }
   ]
 };
 

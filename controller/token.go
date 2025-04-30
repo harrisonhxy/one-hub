@@ -57,38 +57,38 @@ func GetToken(c *gin.Context) {
 	})
 }
 
-func GetPlaygroundToken(c *gin.Context) {
-	tokenName := "sys_playground"
-	userId := c.GetInt("id")
-	token, err := model.GetTokenByName(tokenName, userId)
-	if err != nil {
-		cleanToken := model.Token{
-			UserId: userId,
-			Name:   tokenName,
-			// Key:            utils.GenerateKey(),
-			CreatedTime:    utils.GetTimestamp(),
-			AccessedTime:   utils.GetTimestamp(),
-			ExpiredTime:    0,
-			RemainQuota:    0,
-			UnlimitedQuota: true,
-		}
-		err = cleanToken.Insert()
-		if err != nil {
-			c.JSON(http.StatusOK, gin.H{
-				"success": false,
-				"message": "创建令牌失败，请去系统手动配置一个名称为：sys_playground 的令牌",
-			})
-			return
-		}
-		token = &cleanToken
-	}
-
-	c.JSON(http.StatusOK, gin.H{
-		"success": true,
-		"message": "",
-		"data":    token.Key,
-	})
-}
+// func GetPlaygroundToken(c *gin.Context) {
+// 	tokenName := "sys_playground"
+// 	userId := c.GetInt("id")
+// 	token, err := model.GetTokenByName(tokenName, userId)
+// 	if err != nil {
+// 		cleanToken := model.Token{
+// 			UserId: userId,
+// 			Name:   tokenName,
+// 			// Key:            utils.GenerateKey(),
+// 			CreatedTime:    utils.GetTimestamp(),
+// 			AccessedTime:   utils.GetTimestamp(),
+// 			ExpiredTime:    0,
+// 			RemainQuota:    0,
+// 			UnlimitedQuota: true,
+// 		}
+// 		err = cleanToken.Insert()
+// 		if err != nil {
+// 			c.JSON(http.StatusOK, gin.H{
+// 				"success": false,
+// 				"message": "创建令牌失败，请去系统手动配置一个名称为：sys_playground 的令牌",
+// 			})
+// 			return
+// 		}
+// 		token = &cleanToken
+// 	}
+//
+// 	c.JSON(http.StatusOK, gin.H{
+// 		"success": true,
+// 		"message": "",
+// 		"data":    token.Key,
+// 	})
+// }
 
 func AddToken(c *gin.Context) {
 	userId := c.GetInt("id")
