@@ -12,7 +12,7 @@ import LogoSection from '../LogoSection';
 import Profile from './Profile';
 import ThemeButton from 'ui-component/ThemeButton';
 import I18nButton from 'ui-component/i18nButton';
-import { NoticeButton } from 'ui-component/notice';
+// import { NoticeButton } from 'ui-component/notice';
 
 // assets
 // import { Icon } from '@iconify/react';
@@ -23,7 +23,7 @@ const Header = ({ handleLeftDrawerToggle, toggleProfileDrawer }) => {
   const theme = useTheme();
   const [isDrawerOpen, setIsDrawerOpen] = useState(true);
   const location = useLocation();
-  
+
   // 检查当前路径是否为面板/控制台页面
   const isConsoleRoute = location.pathname.startsWith('/panel');
 
@@ -76,7 +76,7 @@ const Header = ({ handleLeftDrawerToggle, toggleProfileDrawer }) => {
 
       {/* 右侧功能按钮区 */}
       <Stack direction="row" spacing={1} alignItems="center">
-        <NoticeButton />
+        {/* <NoticeButton /> */}
         <ThemeButton />
         <I18nButton />
         {isConsoleRoute && <Profile toggleProfileDrawer={toggleProfileDrawer} />}

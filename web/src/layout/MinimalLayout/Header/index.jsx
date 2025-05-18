@@ -20,7 +20,7 @@ import { Link } from 'react-router-dom';
 import { useLocation } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import ThemeButton from 'ui-component/ThemeButton';
-import { NoticeButton } from 'ui-component/notice';
+// import { NoticeButton } from 'ui-component/notice';
 import I18nButton from 'ui-component/i18nButton';
 import Transitions from 'ui-component/extended/Transitions';
 import MainCard from 'ui-component/cards/MainCard';
@@ -67,7 +67,7 @@ const Header = () => {
       <Stack spacing={{ xs: 0.5, sm: 1, md: 2 }} direction="row" justifyContent="center" alignItems="center">
         {isMobile ? (
           <>
-            <NoticeButton sx={{ color: theme.palette.text.primary, mr: 1 }} />
+            {/* <NoticeButton sx={{ color: theme.palette.text.primary, mr: 1 }} /> */}
             <ThemeButton sx={{ color: theme.palette.text.primary, mr: 1 }} />
             <I18nButton sx={{ color: theme.palette.text.primary, mr: 1 }} />
             <IconButton
@@ -178,7 +178,7 @@ const Header = () => {
               </Button>
             )}
 
-            <NoticeButton sx={{ color: theme.palette.text.primary, ml: 1 }} />
+            {/* <NoticeButton sx={{ color: theme.palette.text.primary, ml: 1 }} /> */}
             <ThemeButton sx={{ color: theme.palette.text.primary, ml: 0.5 }} />
             <I18nButton sx={{ color: theme.palette.text.primary, ml: 0.5 }} />
             {account.user ? (
