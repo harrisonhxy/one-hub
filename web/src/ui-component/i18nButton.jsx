@@ -3,8 +3,9 @@ import { useTheme } from '@mui/material/styles';
 import { Avatar, Box, ButtonBase, Hidden, Menu, MenuItem, Typography } from '@mui/material';
 import i18nList from 'i18n/i18nList';
 import useI18n from 'hooks/useI18n';
-import Flags from 'country-flag-icons/react/3x2';
+// import Flags from 'country-flag-icons/react/3x2';
 import { height } from '@mui/system';
+import { Icon } from '@iconify/react';
 
 export default function I18nButton() {
   const theme = useTheme();
@@ -26,14 +27,14 @@ export default function I18nButton() {
   };
 
   // 获取当前语言的国家代码
-  const getCurrentCountryCode = () => {
-    const currentLang = i18n.language || 'zh_CN';
-    const langItem = i18nList.find((item) => item.lng === currentLang) || i18nList[0];
-    return langItem.countryCode;
-  };
+  // const getCurrentCountryCode = () => {
+  //   const currentLang = i18n.language || 'zh_CN';
+  //   const langItem = i18nList.find((item) => item.lng === currentLang) || i18nList[0];
+  //   return langItem.countryCode;
+  // };
 
   // 动态获取当前语言的国旗组件
-  const CurrentFlag = Flags[getCurrentCountryCode()];
+  // const CurrentFlag = Flags[getCurrentCountryCode()];
 
   return (
     <Box
@@ -64,7 +65,8 @@ export default function I18nButton() {
           }}
           color="inherit"
         >
-          {CurrentFlag && (
+          <Icon icon="mingcute:translate-2-fill" width="1.3rem" />
+          {/* {CurrentFlag && (
             <Box
               sx={{
                 width: '1.45rem',
@@ -77,7 +79,7 @@ export default function I18nButton() {
             >
               <CurrentFlag style={{ width: '95%', height: '85%', borderRadius: '0.25rem' }} />
             </Box>
-          )}
+          )} */}
         </Avatar>
       </ButtonBase>
       <Menu
