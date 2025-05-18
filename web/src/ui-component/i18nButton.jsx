@@ -95,37 +95,14 @@ export default function I18nButton() {
           horizontal: 'center'
         }}
       >
-        {i18nList.map((item) => {
-          const FlagComponent = Flags[item.countryCode];
-          return (
-            <MenuItem
-              key={item.lng}
-              onClick={() => handleLanguageChange(item.lng)}
-              sx={{
-                display: 'flex',
-                alignItems: 'center',
-                gap: 1
-              }}
-            >
-              {FlagComponent && (
-                <Box
-                  sx={{
-                    width: '1.45rem',
-                    height: '1.125rem',
-                    overflow: 'hidden',
-                    borderRadius: '0.25rem',
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center'
-                  }}
-                >
-                  <FlagComponent style={{ width: '90%', height: '77%', borderRadius: '0.25rem' }} />
-                </Box>
-              )}
-              <Typography variant="body1">{item.name}</Typography>
-            </MenuItem>
-          );
-        })}
+        {i18nList.map((item) => (
+          <MenuItem
+            key={item.lng}
+            onClick={() => handleLanguageChange(item.lng)}
+          >
+            <Typography variant="body1">{item.name}</Typography>
+          </MenuItem>
+        ))}
       </Menu>
     </Box>
   );
