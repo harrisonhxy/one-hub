@@ -77,17 +77,8 @@ export default function TokensTableRow({ item, manageToken, handleOpenModal, set
     setOpenDelete(false);
   };
 
-  const handleOpenMenu = (event, type) => {
-    switch (type) {
-      case 'copy':
-        setMenuItems(copyItems);
-        break;
-      case 'link':
-        setMenuItems(linkItems);
-        break;
-      default:
-        setMenuItems(actionItems);
-    }
+  const handleOpenMenu = (event) => {
+    setMenuItems(actionItems);
     setOpen(event.currentTarget);
   };
 
@@ -127,45 +118,45 @@ export default function TokensTableRow({ item, manageToken, handleOpenModal, set
     }
   ]);
 
-  const handleCopy = (option, type) => {
-    let server = '';
-    if (siteInfo?.server_address) {
-      server = siteInfo.server_address;
-    } else {
-      server = window.location.host;
-    }
+  // const handleCopy = (option, type) => {
+  //   let server = '';
+  //   if (siteInfo?.server_address) {
+  //     server = siteInfo.server_address;
+  //   } else {
+  //     server = window.location.host;
+  //   }
 
-    server = encodeURIComponent(server);
+  //   server = encodeURIComponent(server);
 
-    let url = option.url;
+  //   let url = option.url;
 
-    const key = 'sk-' + item.key;
-    const text = replaceChatPlaceholders(url, key, server);
-    if (type === 'link') {
-      window.open(text);
-    } else {
-      copy(text, t('common.link'));
-    }
-    handleCloseMenu();
-  };
+  //   const key = 'sk-' + item.key;
+  //   const text = replaceChatPlaceholders(url, key, server);
+  //   if (type === 'link') {
+  //     window.open(text);
+  //   } else {
+  //     copy(text, t('common.link'));
+  //   }
+  //   handleCloseMenu();
+  // };
 
-  const copyItems = createMenu(
-    chatLinks.map((option) => ({
-      text: option.name,
-      icon: undefined,
-      onClick: () => handleCopy(option, 'copy'),
-      color: undefined
-    }))
-  );
+  // const copyItems = createMenu(
+  //   chatLinks.map((option) => ({
+  //     text: option.name,
+  //     icon: undefined,
+  //     onClick: () => handleCopy(option, 'copy'),
+  //     color: undefined
+  //   }))
+  // );
 
-  const linkItems = createMenu(
-    chatLinks.map((option) => ({
-      text: option.name,
-      icon: undefined,
-      onClick: () => handleCopy(option, 'link'),
-      color: undefined
-    }))
-  );
+  // const linkItems = createMenu(
+  //   chatLinks.map((option) => ({
+  //     text: option.name,
+  //     icon: undefined,
+  //     onClick: () => handleCopy(option, 'link'),
+  //     color: undefined
+  //   }))
+  // );
 
   useEffect(() => {
     setStatusSwitch(item.status);
@@ -190,7 +181,7 @@ export default function TokensTableRow({ item, manageToken, handleOpenModal, set
               id={`switch-${item.id}`}
               checked={statusSwitch === 1}
               onChange={handleStatus}
-              // disabled={statusSwitch !== 1 && statusSwitch !== 2}
+            // disabled={statusSwitch !== 1 && statusSwitch !== 2}
             />
           </Tooltip>
         </TableCell>
@@ -205,27 +196,16 @@ export default function TokensTableRow({ item, manageToken, handleOpenModal, set
 
         <TableCell>
           <Stack direction="row" justifyContent="center" alignItems="center" spacing={1}>
-            <ButtonGroup size="small" aria-label="split button">
-              <Button
-                color="primary"
-                onClick={() => {
-                  copy(`sk-${item.key}`, t('token_index.token'));
-                }}
-              >
-                {isMobile ? <Icon icon="mdi:content-copy" /> : t('token_index.copy')}
-              </Button>
-              <Button size="small" onClick={(e) => handleOpenMenu(e, 'copy')}>
-                <IconCaretDownFilled size={'16px'} />
-              </Button>
-            </ButtonGroup>
-            <ButtonGroup size="small" onClick={(e) => handleOpenMenu(e, 'link')} aria-label="split button">
-              <Button size="small" color="primary">
-                {isMobile ? <Icon icon="mdi:chat" /> : t('token_index.chat')}
-              </Button>
-              <Button size="small">
-                <IconCaretDownFilled size={'16px'} />
-              </Button>
-            </ButtonGroup>
+            <Button
+              color="primary"
+              size="small"
+              sx={{ borderRadius: '20px' }}
+              onClick={() => {
+                copy(`sk-${item.key}`, t('token_index.token'));
+              }}
+            >
+              {isMobile ? <Icon icon="mdi:content-copy" /> : t('token_index.copy')}
+            </Button>
             <IconButton onClick={(e) => handleOpenMenu(e, 'action')} sx={{ color: 'rgb(99, 115, 129)' }}>
               <Icon icon="solar:menu-dots-circle-bold-duotone" width={20} />
             </IconButton>
