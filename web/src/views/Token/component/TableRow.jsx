@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 import { useState, useEffect } from 'react';
-import { useSelector } from 'react-redux';
+// import { useSelector } from 'react-redux';
 
 import {
   Popover,
@@ -16,15 +16,14 @@ import {
   Button,
   Tooltip,
   Stack,
-  ButtonGroup
 } from '@mui/material';
 
 import TableSwitch from 'ui-component/Switch';
-import { renderQuota, timestamp2string, copy, getChatLinks, replaceChatPlaceholders } from 'utils/common';
+import { renderQuota, timestamp2string, copy } from 'utils/common';
 import Label from 'ui-component/Label';
 
 import { Icon } from '@iconify/react';
-import { IconCaretDownFilled } from '@tabler/icons-react';
+// import { IconCaretDownFilled } from '@tabler/icons-react';
 import { useTranslation } from 'react-i18next';
 import useMediaQuery from '@mui/material/useMediaQuery';
 import { useTheme } from '@mui/material/styles';
@@ -63,8 +62,8 @@ export default function TokensTableRow({ item, manageToken, handleOpenModal, set
   const [menuItems, setMenuItems] = useState(null);
   const [openDelete, setOpenDelete] = useState(false);
   const [statusSwitch, setStatusSwitch] = useState(item.status);
-  const siteInfo = useSelector((state) => state.siteInfo);
-  const chatLinks = getChatLinks();
+  // const siteInfo = useSelector((state) => state.siteInfo);
+  // const chatLinks = getChatLinks();
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
 
