@@ -939,7 +939,6 @@
         "usernameClaimsPlaceholder": "请输入用户名声明(例如username)",
         "saveButton": "保存OIDC设置"
       },
-
       "configureTurnstile": {
         "title": "配置 Turnstile",
         "subTitle": "用以支持用户校验，",
@@ -1019,11 +1018,9 @@
     "githubError": "操作失败，重定向至登录界面中...",
     "githubCountError": "出现错误，第 {{count}} 次重试中...",
     "githubLogin": "GitHub 登录",
-
     "oidcError": "操作失败，重定向至登录界面中...",
     "oidcCountError": "出现错误，第 {{count}} 次重试中...",
     "oidcLogin": "OIDC 登录",
-
     "larkLogin": "飞书 登录",
     "passwordRest": "密码重置确认",
     "useGithubLogin": "使用 Github 登录",
@@ -1278,7 +1275,47 @@
     "noTest": "未测试"
   },
   "home": {
-    "loadingErr": "加载首页内容失败..."
+    "loadingErr": "Failed to load homepage content...",
+    "hero": {
+      "title": "One Gateway, All AI Models",
+      "description": "Access the world's leading AI models through a single, unified API. Simplify your integration, reduce complexity, and build powerful AI applications faster than ever.",
+      "cta": "Get Started For Free"
+    },
+    "models": {
+      "title": "Top AI Models",
+      "badges": {
+        "latest": "Latest",
+        "popular": "Popular",
+        "fastest": "Fastest",
+        "multimodal": "Multimodal"
+      }
+    },
+    "features": {
+      "title": "Why Choose Our Platform",
+      "unified_api": {
+        "heading": "Unified API",
+        "paragraph": "One consistent API to access all major AI models. No need to manage multiple integrations or learn different interfaces."
+      },
+      "cost_efficiency": {
+        "heading": "Cost Efficiency",
+        "paragraph": "Optimize costs with automatic fallback options and our intelligent routing system that selects the best model based on your requirements."
+      },
+      "reliable_uptime": {
+        "heading": "Reliable Uptime",
+        "paragraph": "Our platform ensures high availability with redundant connections to multiple providers, guaranteeing your AI services stay online."
+      }
+    },
+    "providers": {
+      "title": "Supported Providers",
+      "leading": {
+        "heading": "Leading Providers",
+        "paragraph": "Access models from OpenAI, Anthropic, and more through a single unified API. No need to manage multiple provider integrations."
+      },
+      "opensource": {
+        "heading": "Open Source & Specialized",
+        "paragraph": "Access open-source models like Llama and Mistral alongside specialized AI models for specific tasks and industries."
+      }
+    }
   },
   "jump": "正在跳转中...",
   "渠道名称": "渠道名称",
