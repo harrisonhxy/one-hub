@@ -57,6 +57,7 @@ type ChatCompletionMessage struct {
 	Audio            any                              `json:"audio,omitempty"`
 	Annotations      any                              `json:"annotations,omitempty"`
 	Image            []MultimediaData                 `json:"image,omitempty"`
+	Images           []ChatMessagePart                `json:"images,omitempty"`
 }
 
 func (m ChatCompletionMessage) StringContent() string {
@@ -205,6 +206,7 @@ type ChatCompletionRequest struct {
 	ReasoningEffort     *string                       `json:"reasoning_effort,omitempty"`
 	Prediction          any                           `json:"prediction,omitempty"`
 	WebSearchOptions    *WebSearchOptions             `json:"web_search_options,omitempty"`
+	Verbosity           string                        `json:"verbosity,omitempty"` // 用于控制输出的详细程度
 
 	Reasoning *ChatReasoning `json:"reasoning,omitempty"`
 
@@ -395,6 +397,7 @@ type ChatCompletionStreamChoiceDelta struct {
 	ReasoningContent string                           `json:"reasoning_content,omitempty"`
 	Reasoning        string                           `json:"reasoning,omitempty"`
 	Image            []MultimediaData                 `json:"image,omitempty"`
+	Images           []ChatMessagePart                `json:"images,omitempty"`
 }
 
 func (m *ChatCompletionStreamChoiceDelta) ToolToFuncCalls() {
@@ -464,9 +467,34 @@ func (c *ChatCompletionRequest) ToResponsesRequest() *OpenAIResponsesRequest {
 		ParallelToolCalls: c.ParallelToolCalls,
 		Stream:            c.Stream,
 		Temperature:       c.Temperature,
-		Text:              c.ResponseFormat,
 		ToolChoice:        c.ToolChoice,
 		TopP:              c.TopP,
+	}
+
+	if c.ResponseFormat != nil {
+		res.Text = &ResponsesText{}
+
+		if c.ResponseFormat.Type != "" {
+			res.Text.Format = &ResponsesTextFormat{
+				Type: c.ResponseFormat.Type,
+			}
+		}
+
+		if c.ResponseFormat.JsonSchema != nil && res.Text.Format != nil {
+			res.Text.Format.Name = c.ResponseFormat.JsonSchema.Name
+			res.Text.Format.Schema = c.ResponseFormat.JsonSchema.Schema
+			res.Text.Format.Description = c.ResponseFormat.JsonSchema.Description
+			res.Text.Format.Strict = c.ResponseFormat.JsonSchema.Strict
+		}
+
+	}
+
+	if c.Verbosity != "" {
+		if res.Text == nil {
+			res.Text = &ResponsesText{}
+		}
+
+		res.Text.Verbosity = c.Verbosity
 	}
 
 	if c.MaxCompletionTokens > 0 && c.MaxTokens == 0 {
