@@ -8,7 +8,7 @@
 // import { replaceChatPlaceholders, getChatLinks } from 'utils/common';
 // import { IconAppWindow } from '@tabler/icons-react';
 // import { useTranslation } from 'react-i18next';
-//
+
 // const QuickStartCard = () => {
 //   const { t } = useTranslation();
 //   const [key, setKey] = useState('');
@@ -16,7 +16,7 @@
 //   const siteInfo = useSelector((state) => state.siteInfo);
 //   const chatLinks = getChatLinks(false);
 //   const baseServer = siteInfo.server_address;
-//
+
 //   const getProcessedUrl = useCallback(
 //     (url, key) => {
 //       let server = baseServer || window.location.host;
@@ -26,7 +26,7 @@
 //     },
 //     [baseServer]
 //   );
-//
+
 //   const handleClick = async (url) => {
 //     if (!key) {
 //       try {
@@ -45,7 +45,7 @@
 //       window.open(getProcessedUrl(url, key), '_blank');
 //     }
 //   };
-//
+
 //   return (
 //     <Box>
 //       <SubCard>
@@ -56,8 +56,8 @@
 //           <Typography variant="body1" color="textSecondary">
 //             {t('dashboard_index.quickStartTip')}
 //           </Typography>
-//
-//           <Stack spacing={2}>
+
+//           <Stack direction="row" flexWrap="wrap" sx={{ gap: 2 }}>
 //             {chatLinks.map(
 //               (option, index) =>
 //                 option.url.startsWith('http') && (
@@ -71,10 +71,10 @@
 //                       color: 'white',
 //                       '&:hover': {
 //                         backgroundColor: theme.palette.primary.dark,
-//                         boxShadow: '0 0 10px 0 rgba(11, 108, 235, 0.5)'
+//                         boxShadow: '0 0 3px 0 rgba(11, 108, 235, 0.5)'
 //                       },
 //                       textTransform: 'none',
-//                       boxShadow: '0 0 15px 0 rgba(11, 108, 235, 0.5)'
+//                       boxShadow: '0 0 3px 0 rgba(11, 108, 235, 0.5)'
 //                     }}
 //                   >
 //                     {option.name}
@@ -83,7 +83,7 @@
 //             )}
 //           </Stack>
 //           <Divider />
-//           <Stack spacing={2} direction="row" flexWrap="wrap" sx={{ gap: 2 }}>
+//           <Stack direction="row" flexWrap="wrap" sx={{ gap: 2 }}>
 //             {chatLinks.map(
 //               (option, index) =>
 //                 !option.url.startsWith('http') && (
@@ -97,10 +97,10 @@
 //                       color: 'white',
 //                       '&:hover': {
 //                         backgroundColor: '#00838F',
-//                         boxShadow: '0 0 10px 0 #00838F'
+//                         boxShadow: '0 0 3px 0 #00838F'
 //                       },
 //                       textTransform: 'none',
-//                       boxShadow: '0 0 10px 0 #00838F'
+//                       boxShadow: '0 0 3px 0 #00838F'
 //                     }}
 //                   >
 //                     {option.name}
@@ -113,5 +113,5 @@
 //     </Box>
 //   );
 // };
-//
+
 // export default QuickStartCard;
