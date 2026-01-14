@@ -19,3 +19,4 @@ one-api
 _output
 docker-compose.yml
 .DS_Store
+.claude
